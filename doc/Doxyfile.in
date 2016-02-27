@@ -1,0 +1,19 @@
+PROJECT_NAME           = "@CMAKE_PROJECT_NAME@"
+PROJECT_NUMBER         = @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@
+STRIP_FROM_PATH        = @PROJECT_SOURCE_DIR@ \
+                         @PROJECT_BINARY_DIR@
+INPUT                  = @doxy_main_page@ \
+                         @PROJECT_SOURCE_DIR@/include
+FILE_PATTERNS          = *.h \
+                         *.cpp \
+						 *.cuh \
+						 *.cu
+RECURSIVE				= YES
+USE_MDFILE_AS_MAINPAGE 	= @doxy_main_page@
+USE_MATHJAX				= YES
+EXTRACT_STATIC 			= YES
+EXTRACT_PRIVATE 		= YES
+AUTOLINK_SUPPORT		= YES
+#GENERATE_HTML 			= YES
+GENERATE_HTMLHELP 		= YES
+SEARCHENGINE = NO
