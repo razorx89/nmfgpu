@@ -1,8 +1,6 @@
 # nmfgpu
 *Computation of the Non-negative Matrix Factorization (NMF) on CUDA capable Hardware*
 
-------
-
 ## Installation
 
 ### Prerequisites
@@ -21,7 +19,7 @@
 1. First use __git__ to clone the repository into a new directory:  
   ```
   git clone https://github.com/razorx89/nmfgpu.git
-  ```
+  ```  
   If you don't have git installed on your system, then you can download the repository as a zip compressed archive and extract it.
 2. #### Using the GUI interface  
   Switch into the newly created directory and run __cmake-gui__:
