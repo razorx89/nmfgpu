@@ -1,6 +1,14 @@
 # nmfgpu
 *Computation of the Non-negative Matrix Factorization (NMF) on CUDA capable Hardware*
 
+## Licence
+This library is primary distributed under the terms of the *General Public Licence Version 3 (GPVv3)*.
+
+![GPLv3 Logo](http://www.gnu.org/graphics/gplv3-127x51.png "GPLv3 Logo")
+
+Furthermore if you are planning to use this work in proprietary software, please
+do not hesitate to get in contact for a commercial licence.
+
 ## Installation
 
 ### Prerequisites

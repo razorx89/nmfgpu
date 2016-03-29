@@ -1,3 +1,24 @@
+/*
+nmfgpu - CUDA accelerated computation of Non-negative Matrix Factorizations (NMF)
+
+Copyright (C) 2015-2016  Sven Koitka (svenkoitka@fh-dortmund.de)
+
+This file is part of nmfgpu.
+
+nmfgpu is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+nmfgpu is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with nmfgpu.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 /** @file **/
 
 #pragma once
@@ -9,7 +30,7 @@
 #define NMFGPU_PATCH 3
 #define NMFGPU_VERSION ((NMFGPU_MAJOR << 24) | (NMFGPU_MINOR << 16) | NMFGPU_PATCH)
 
-#ifdef WIN32 
+#ifdef WIN32
 	#ifdef NMFGPU_STATIC_LINKING
 		#define NMFGPU_EXPORT
 	#else
@@ -27,7 +48,7 @@
 
 /** A */
 namespace nmfgpu {
-	/** Specifies several return values for the API which should be checked after calling a function. */ 
+	/** Specifies several return values for the API which should be checked after calling a function. */
 	enum class ResultType {
 		/** Function call was successful and no error occured. */
 		Success = 0,
@@ -114,7 +135,7 @@ namespace nmfgpu {
 
 	typedef bool(*UserInterruptCallback)();
 
-	struct ExecutionStatistic { 
+	struct ExecutionStatistic {
 		double frobenius;
 		double rmsd;
 		double elapsedTime;
@@ -135,16 +156,16 @@ namespace nmfgpu {
 		@returns Index of the best run. */
 		virtual unsigned bestRun() const = 0;
 
-		/** 
-		@param[in] index 
+		/**
+		@param[in] index
 		@param[out] record
 		@returns */
 		virtual void record(unsigned index, ExecutionRecord& record) const = 0;
 
-		/** Retrieves the count of saved records, which will be at most the configured number of runs. If the user has interrupted the 
+		/** Retrieves the count of saved records, which will be at most the configured number of runs. If the user has interrupted the
 		execution then the count of stored records can be less than the maximum number of runs.
 
-		@returns Count of stored records. 
+		@returns Count of stored records.
 
 		@see nmfgpu::IContext::setRunCount()*/
 		virtual unsigned recordCount() const = 0;
@@ -238,7 +259,7 @@ namespace nmfgpu {
 
 		/** Number of features to extract from the input data matrix. */
 		unsigned features;
-		
+
 		NmfInitializationMethod initMethod;
 		unsigned numIterations;
 		unsigned numRuns;
@@ -268,7 +289,7 @@ namespace nmfgpu {
 		size_t totalMemory;
 		size_t freeMemory;
 	};
-	
+
 	NMFGPU_EXPORT ResultType getInformationForGpuIndex(unsigned index, GpuInformation& info);
 
 	/** A*/
