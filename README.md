@@ -1,8 +1,18 @@
 # nmfgpu
-*Computation of the Non-negative Matrix Factorization (NMF) on CUDA capable Hardware*
+*CUDA accelerated computation of Non-negative Matrix Factorizations (NMF)*
+
+## About
+The Non-negative Matrix Factorization (NMF) was first described by *Paatero and Tapper* [1]
+and further developed by *Lee & Seung* [2]. Since then various algorithms for different needs were developed,
+such as *Alternating Hoyer Constrained Least Squared (AHCLS)* [3], *Gradient Descent Constrained Least Squares (GDCLS)* [4]
+and *Non-smooth Non-negative Matrix Factorization (nsNMF)* [5]. This library implements a set of algorithms and initialization strategies
+using the CUDA platforms. A binding to this library exists for the R language and can be found [here](https://github.com/razorx89/nmfgpu4R).
+
+## Citation
+TBA
 
 ## Licence
-This library is primary distributed under the terms of the *General Public Licence Version 3 (GPVv3)*.
+This library is primary distributed under the terms of the *General Public Licence Version 3 (GPLv3)*.
 
 ![GPLv3 Logo](http://www.gnu.org/graphics/gplv3-127x51.png "GPLv3 Logo")
 
@@ -79,4 +89,13 @@ do not hesitate to get in contact for a commercial licence.
   ```
 4. For ease of usage you should define an environment variable called __NMFGPU_ROOT__ which points to the location of the installed library (the path provided to *CMAKE_INSTALL_PREFIX*).
 
-## About
+## References
+[1] Paatero, P. and Tapper, U. [1994], "Positive matrix factorization: A non-negative factor model with optimal utilization of error estimates of data values", Environmetrics 5(2), 111–126.  
+
+[2] Lee, D. D. and Seung, H. S. [1999], "Learning the parts of objects by non-negative matrix factorization", Nature 401(6755), 788–791.  
+
+[3] Langville, A. N., Meyer, C. D., Albright, R., Cox, J. and Duling, D. [2014], "Algorithms, initializations, and convergence for the nonnegative matrix factorization", CoRR abs/1407.7299.  
+
+[4] Shahnaz, F., Berry, M. W., Pauca, V. and Plemmons, R. J. [2006], ‘Document clustering using nonnegative matrix factorization’, Information Processing & Management 42(2), 373–386.   
+
+[5] Pascual-Montano, A., Carazo, J., Kochi, K., Lehmann, D. and Pascual-Marqui, R. [2006], "Nonsmooth nonnegative matrix factorization (nsNMF)", IEEE Transactions on Pattern Analysis and Machine Intelligence 28(3), 403–415.
