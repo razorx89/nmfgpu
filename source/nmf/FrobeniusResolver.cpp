@@ -33,7 +33,7 @@ namespace nmfgpu {
 
 			auto resolvedFrob = 0.0;
 			auto max = std::max(hpsVTV.elements(), std::max(hpsHTWTV.elements(), hpsHHTWTW.elements()));
-			for (int j = 0; j < max; ++j) {
+			for (auto j = 0u; j < max; ++j) {
 				if (j < hpsVTV.elements()) {
 					resolvedFrob += hpsVTV.at(j);
 				}
