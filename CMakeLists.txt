@@ -108,6 +108,14 @@ if ( CUDA_FOUND )
 	endif()
 	
 	set(LIBS ${LIBS} ${CUDA_CUBLAS_LIBRARIES} ${CUDA_curand_LIBRARY} ${CUDA_cusparse_LIBRARY} ${CUDA_cusolver_LIBRARY})
+
+	# cuSOLVER from CUDA >= 8.0 requires OpenMP
+	if(NOT (${CUDA_VERSION_MAJOR} LESS 8))
+		# OS X maybe also requires OpenMP, but cannot be tested right now  
+		if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" )
+			set(LIBS ${LIBS} gomp)
+		endif()
+	endif()
 endif()
 
 #####################################################################################################################
